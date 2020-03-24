@@ -1,5 +1,5 @@
 """
-ASGI config for python_tutor_in project.
+ASGI config for python_coach_in project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'python_tutor_in.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'python_coach_in.settings')
 
 application = get_asgi_application()

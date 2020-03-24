@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn python_tutor_in.wsgi
+web: gunicorn python_coach_in.wsgi

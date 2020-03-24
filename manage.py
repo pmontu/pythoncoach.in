@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'python_tutor_in.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'python_coach_in.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

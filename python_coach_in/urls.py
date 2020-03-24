@@ -1,4 +1,4 @@
-"""python_tutor_in URL Configuration
+"""python_coach_in URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
