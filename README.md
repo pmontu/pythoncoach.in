@@ -1,10 +1,10 @@
 # [Python Tutor](pythoncoach.in)
 
-## Courses
+# Courses
 
 - Web programming and Computer Fundaments
 
-## Documentation
+# Documentation
 
 - python
 - pipenv
@@ -14,21 +14,22 @@
 - heroku
 - .env
 
-### Heroku
+# Heroku
 
 - create heroku app
 - add postgres heroku addon
 - add SECRET_KEY to config
 
-## Contribute
+# Contribute
 
 - create postgres database
 - create .env file and fill below
 
 ```
-SECRET_KEY=%bl77gh^7h%#(+%(+k&e%)lk$77#v_0tu2jmz2u+8_ws_vu1gs
-DATABASE_NAME=python_coach_in
-DATABASE_USER=user
+SECRET_KEY = %bl77gh ^ 7h%  # (+%(+k&e%)lk$77#v_0tu2jmz2u+8_ws_vu1gs
+DATABASE_NAME = python_coach_in
+DATABASE_USER = user
+DEBUG = True
 ```
 
 ```
@@ -38,7 +39,7 @@ pipenv install
 ./manage.py runserver
 ```
 
-## Troubleshooting
+# Troubleshooting
 
 - python 3.8.2
 - pipenv
