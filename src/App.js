@@ -1,58 +1,95 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Button, Section, Box, Tile, Heading } from "react-bulma-components";
+
+const courses = [
+  {
+    src:
+      "https://onedrive.live.com/embed?cid=79B123A32E5D317F&amp;resid=79B123A32E5D317F%212723&amp;authkey=AJJhq1Us7BY7pvM&amp;em=2&amp;wdStartOn=1",
+    title: "C Programming and Computer Fundaments",
+    id: 1
+  },
+  {
+    src:
+      "https://onedrive.live.com/embed?cid=79B123A32E5D317F&amp;resid=79B123A32E5D317F%212723&amp;authkey=AJJhq1Us7BY7pvM&amp;em=2&amp;wdStartOn=1",
+    title: "Python Scripting, Data Structures and Algorithms",
+    id: 2
+  },
+  {
+    src:
+      "https://onedrive.live.com/embed?cid=79B123A32E5D317F&amp;resid=79B123A32E5D317F%212723&amp;authkey=AJJhq1Us7BY7pvM&amp;em=2&amp;wdStartOn=1",
+    title: "Python Web Programming",
+    id: 3
+  },
+  {
+    src:
+      "https://onedrive.live.com/embed?cid=79B123A32E5D317F&amp;resid=79B123A32E5D317F%212723&amp;authkey=AJJhq1Us7BY7pvM&amp;em=2&amp;wdStartOn=1",
+    title: "Object Oriented Programming in Django",
+    id: 4
+  }
+];
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/courses">
-            <Courses />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
-      <Header />
-    </div>
+    <>
+      <Section>
+        <Box>
+          <Heading size={1}>Python Coach</Heading>
+          <Heading subtitle size={3}>
+            Courses
+          </Heading>
+        </Box>
+        <Tile vertical>
+          {courses.map(course => (
+            <Course {...course} key={course.id} />
+          ))}
+        </Tile>
+      </Section>
+    </>
   );
 }
 
-function Header() {
+function Course(props) {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
+    <Box>
+      <Tile vertical>
+        <Heading>Course {props.id}</Heading>
+        <Heading subtitle>{props.title}</Heading>
+        <Button color="dark" fullwidth={false}>
+          Enroll
+        </Button>
+      </Tile>
+    </Box>
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Courses() {
-  return <h2>Courses</h2>;
-}
+// function CourseDescription({ src, title }) {
+//   console.log({ src, title });
+//   return (
+//     <>
+//       <h1>{title}</h1>
+//       <iframe
+//         src={src}
+//         width="850px"
+//         height="600px"
+//         frameBorder="0"
+//         title={title}
+//       >
+//         This is an embedded{" "}
+//         <a target="_blank" href="https://office.com" rel="noopener noreferrer">
+//           Microsoft Office
+//         </a>{" "}
+//         document, powered by{" "}
+//         <a
+//           target="_blank"
+//           href="https://office.com/webapps"
+//           rel="noopener noreferrer"
+//         >
+//           Office
+//         </a>
+//         .
+//       </iframe>
+//     </>
+//   );
+// }
 
 export default App;
