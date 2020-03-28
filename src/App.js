@@ -1,32 +1,6 @@
 import React from "react";
 import { Button, Section, Box, Tile, Heading } from "react-bulma-components";
-
-const courses = [
-  {
-    src:
-      "https://onedrive.live.com/embed?cid=79B123A32E5D317F&amp;resid=79B123A32E5D317F%212723&amp;authkey=AJJhq1Us7BY7pvM&amp;em=2&amp;wdStartOn=1",
-    title: "C Programming and Computer Fundaments",
-    id: 1
-  },
-  {
-    src:
-      "https://onedrive.live.com/embed?cid=79B123A32E5D317F&amp;resid=79B123A32E5D317F%212723&amp;authkey=AJJhq1Us7BY7pvM&amp;em=2&amp;wdStartOn=1",
-    title: "Python Scripting, Data Structures and Algorithms",
-    id: 2
-  },
-  {
-    src:
-      "https://onedrive.live.com/embed?cid=79B123A32E5D317F&amp;resid=79B123A32E5D317F%212723&amp;authkey=AJJhq1Us7BY7pvM&amp;em=2&amp;wdStartOn=1",
-    title: "Python Web Programming",
-    id: 3
-  },
-  {
-    src:
-      "https://onedrive.live.com/embed?cid=79B123A32E5D317F&amp;resid=79B123A32E5D317F%212723&amp;authkey=AJJhq1Us7BY7pvM&amp;em=2&amp;wdStartOn=1",
-    title: "Object Oriented Programming in Django",
-    id: 4
-  }
-];
+import courses, { syllabus } from "./data/courses";
 
 function App() {
   return (
