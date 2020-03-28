@@ -1,5 +1,13 @@
-import React from "react";
-import { Button, Section, Box, Tile, Heading } from "react-bulma-components";
+import React, { useState } from "react";
+import {
+  Button,
+  Section,
+  Box,
+  Tile,
+  Heading,
+  Modal
+} from "react-bulma-components";
+import { OpenModal } from "./common/bulma";
 import courses, { syllabus } from "./data/courses";
 
 function App() {
@@ -28,11 +36,23 @@ function Course(props) {
       <Tile vertical>
         <Heading>Course {props.id}</Heading>
         <Heading subtitle>{props.title}</Heading>
-        <Button color="dark" fullwidth={false}>
-          Enroll
-        </Button>
+        <Enrol />
       </Tile>
     </Box>
+  );
+}
+
+function Enrol() {
+  return (
+    <OpenModal modal={{ closeOnEsc: true }}>
+      <Modal.Content>
+        <Section style={{ backgroundColor: "white" }}>
+          Click on the {'"X"'} button on the top-right button to close the Modal
+          (pass closeOnEsc=false to the modal to avoid closing it with the
+          keyboard)
+        </Section>
+      </Modal.Content>
+    </OpenModal>
   );
 }
 
