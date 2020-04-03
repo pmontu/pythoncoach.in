@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Button,
   Section,
   Box,
   Tile,
   Heading,
-  Modal
+  Modal,
+  Form
 } from "react-bulma-components";
 import { OpenModal } from "./common/bulma";
-import courses, { syllabus } from "./data/courses";
+import courses from "./data/courses";
+import { useForm } from "react-hook-form";
+import "react-bulma-components/dist/react-bulma-components.min.css";
+
+const { Field, Control, Label, Input, Help } = Form;
 
 function App() {
   return (
@@ -36,54 +41,39 @@ function Course(props) {
       <Tile vertical>
         <Heading>Course {props.id}</Heading>
         <Heading subtitle>{props.title}</Heading>
-        <Enrol />
+        <StudentEnrollmentForm />
       </Tile>
     </Box>
   );
 }
 
-function Enrol() {
+function StudentEnrollmentForm() {
+  const { register, handleSubmit } = useForm();
+
   return (
     <OpenModal modal={{ closeOnEsc: true }}>
       <Modal.Content>
         <Section style={{ backgroundColor: "white" }}>
-          Click on the {'"X"'} button on the top-right button to close the Modal
-          (pass closeOnEsc=false to the modal to avoid closing it with the
-          keyboard)
+          <form onSubmit={handleSubmit(data => console.log(data))}>
+            <Field>
+              <Label>Name</Label>
+              <Control>
+                <Input name="name" placeholder="Name" domRef={register} />
+              </Control>
+            </Field>
+
+            <Field>
+              <Control>
+                <Button type="primary" fullwidth={true}>
+                  Submit
+                </Button>
+              </Control>
+            </Field>
+          </form>
         </Section>
       </Modal.Content>
     </OpenModal>
   );
 }
-
-// function CourseDescription({ src, title }) {
-//   console.log({ src, title });
-//   return (
-//     <>
-//       <h1>{title}</h1>
-//       <iframe
-//         src={src}
-//         width="850px"
-//         height="600px"
-//         frameBorder="0"
-//         title={title}
-//       >
-//         This is an embedded{" "}
-//         <a target="_blank" href="https://office.com" rel="noopener noreferrer">
-//           Microsoft Office
-//         </a>{" "}
-//         document, powered by{" "}
-//         <a
-//           target="_blank"
-//           href="https://office.com/webapps"
-//           rel="noopener noreferrer"
-//         >
-//           Office
-//         </a>
-//         .
-//       </iframe>
-//     </>
-//   );
-// }
 
 export default App;
