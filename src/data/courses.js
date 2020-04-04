@@ -2,23 +2,23 @@ const courses = [
   {
     title: "C Programming and Computer Fundaments",
     id: 1,
-    difficulty: "Basic"
+    difficulty: "Basic",
   },
   {
     title: "Python Scripting, Data Structures and Algorithms",
     id: 2,
-    difficulty: "Intermediate"
+    difficulty: "Intermediate",
   },
   {
     title: "Python Web Programming",
     id: 3,
-    difficulty: "Advanced"
+    difficulty: "Advanced",
   },
   {
     title: "Object Oriented Programming in Django",
     id: 4,
-    difficulty: "Advanced"
-  }
+    difficulty: "Advanced",
+  },
 ];
 
 export const syllabus = {
@@ -29,7 +29,7 @@ export const syllabus = {
     { title: "Input & Output" },
     {
       title: "Store Data",
-      children: [{ title: "Data Types (Static Typing)" }]
+      children: [{ title: "Data Types (Static Typing)" }],
     },
     {
       title: "Process Data - Logic",
@@ -37,8 +37,8 @@ export const syllabus = {
         { title: "Branching & Conditions" },
         { title: "Iteration" },
         { title: "Modular programming – Functions" },
-        { title: "Objects" }
-      ]
+        { title: "Objects" },
+      ],
     },
     { title: "Errors" },
     {
@@ -47,16 +47,16 @@ export const syllabus = {
         { title: "Encoding & Decoding" },
         {
           title:
-            "Scientific Computation, Mathematical Functions, Visualizations"
+            "Scientific Computation, Mathematical Functions, Visualizations",
         },
         { title: "Data Persistence, File Storage & Cloud Service Providers" },
         { title: "Devices – Mobile" },
         { title: "Graphical User Interfaces" },
-        { title: "Web Pages" }
-      ]
+        { title: "Web Pages" },
+      ],
     },
     { title: "Software Patterns, Concepts & Frameworks." },
-    { title: "Testing, Deployment (CI / CD) & Source Code Versioning (Git)" }
+    { title: "Testing, Deployment (CI / CD) & Source Code Versioning (Git)" },
   ],
   3: [
     {
@@ -67,17 +67,17 @@ export const syllabus = {
           children: [
             { title: "HTML" },
             { title: "JavaScript" },
-            { title: "CSS" }
-          ]
+            { title: "CSS" },
+          ],
         },
         { title: "Dynamic Web Applications" },
         { title: "Content Management Systems" },
-        { title: "Open Source Web Application Programming Frameworks" }
-      ]
+        { title: "Open Source Web Application Programming Frameworks" },
+      ],
     },
     {
       title: "Flask Python Micro Framework",
-      children: [{ title: "Jinja Templating Library" }]
+      children: [{ title: "Jinja Templating Library" }],
     },
     {
       title: "Django Python MVT Framework",
@@ -86,16 +86,16 @@ export const syllabus = {
         { title: "URLs" },
         { title: "Views" },
         { title: "Templates" },
-        { title: "Response" }
-      ]
+        { title: "Response" },
+      ],
     },
     {
       title: "User CRUD (Example)",
       children: [
         { title: "User Model" },
         { title: "User Form" },
-        { title: "Class Based Views" }
-      ]
+        { title: "Class Based Views" },
+      ],
     },
     {
       title: "API Design and Implementation (Django Rest Framework)",
@@ -105,15 +105,15 @@ export const syllabus = {
         { title: "Permissions" },
         { title: "Throttling" },
         { title: "Query sets & Filters" },
-        { title: "Serializers" }
-      ]
+        { title: "Serializers" },
+      ],
     },
     {
       title: "ReactJS",
       children: [
         {
           title:
-            "Introduction to Node.js Runtime Environment, Yarn package manager & ECMAScript 6"
+            "Introduction to Node.js Runtime Environment, Yarn package manager & ECMAScript 6",
         },
         { title: "React DOM, Root Element & React Component" },
         { title: "Class based Components" },
@@ -121,11 +121,11 @@ export const syllabus = {
         { title: "React Elements & JSX" },
         { title: "Hooks – Life cycle method and state composition" },
         { title: "Fetch API" },
-        { title: "Higher Order Functions - map" }
-      ]
+        { title: "Higher Order Functions - map" },
+      ],
     },
-    { title: "Django ORM / Sqlalchemy / Models / Migrations / Versioning" }
-  ]
+    { title: "Django ORM / Sqlalchemy / Models / Migrations / Versioning" },
+  ],
 };
 
 export default courses;
