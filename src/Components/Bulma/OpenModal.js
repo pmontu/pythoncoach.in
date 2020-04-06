@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bulma-components";
 
-export function OpenModal(props) {
+export default function OpenModal(props) {
   const [show, setShow] = useState(false);
   return (
     <div>

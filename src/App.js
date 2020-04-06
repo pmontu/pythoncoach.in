@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Section,
@@ -8,8 +8,7 @@ import {
   Modal,
   Form,
 } from "react-bulma-components";
-import { OpenModal } from "./common/bulma";
-import courses from "./data/courses";
+import OpenModal from "./Components/Bulma/OpenModal";
 import { useForm, Controller } from "react-hook-form";
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import { makeStyles } from "@material-ui/core/styles";
@@ -18,6 +17,7 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { SERVER_BASE_PATH } from "./constants";
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -49,6 +49,18 @@ function SimpleExpansionPanel({ items }) {
 }
 
 function App() {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    fetch(`${SERVER_BASE_PATH}/courses/`)
+      .then((res) => {
+        if (!res.ok) throw Error("fetch courses failed");
+        return res.json();
+      })
+      .then((courses) => setCourses(courses))
+      .catch((err) => alert(err));
+  }, []);
+
   return (
     <>
       <Section>

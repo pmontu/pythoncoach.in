@@ -12,8 +12,13 @@ djangorestframework = "*"
 django-heroku = "*"
 gunicorn = "*"
 wagtail = "*"
+pymongo = "*"
+dnspython = "*"
+python-bsonjs = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 pytest = "*"
 pylint = "*"
 autopep8 = "*"
+python-dotenv = "*"

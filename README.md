@@ -31,6 +31,8 @@ SECRET_KEY = %bl77gh ^ 7h%  # (+%(+k&e%)lk$77#v_0tu2jmz2u+8_ws_vu1gs
 DATABASE_NAME = python_coach_in
 DATABASE_USER = user
 DEBUG = True
+MONGODB_URL=
+DEV_SERVER_PORT=8000
 ```
 
 ```
