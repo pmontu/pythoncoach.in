@@ -7,12 +7,46 @@ import {
   Heading,
   Modal,
   Form,
-  List,
 } from "react-bulma-components";
 import { OpenModal } from "./common/bulma";
-import courses, { syllabus } from "./data/courses";
+import courses from "./data/courses";
 import { useForm, Controller } from "react-hook-form";
 import "react-bulma-components/dist/react-bulma-components.min.css";
+import { makeStyles } from "@material-ui/core/styles";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import Typography from "@material-ui/core/Typography";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
+const useStyles = makeStyles((theme) => ({
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    fontWeight: theme.typography.fontWeightRegular,
+  },
+}));
+
+function SimpleExpansionPanel({ items }) {
+  const classes = useStyles();
+  if (!items) return null;
+
+  return items.map((entry) => (
+    <ExpansionPanel>
+      <ExpansionPanelSummary
+        expandIcon={entry.children && <ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
+      >
+        <Typography className={classes.heading}>{entry.title}</Typography>
+      </ExpansionPanelSummary>
+      <ExpansionPanelDetails>
+        <Typography>
+          {entry.children && <SimpleExpansionPanel items={entry.children} />}
+        </Typography>
+      </ExpansionPanelDetails>
+    </ExpansionPanel>
+  ));
+}
 
 function App() {
   return (
@@ -40,23 +74,10 @@ function Course(props) {
       <Tile vertical>
         <Heading>Course {props.id}</Heading>
         <Heading subtitle>{props.title}</Heading>
-        <Syllabus courseId={props.id} />
+        <SimpleExpansionPanel items={props.children} />
         <StudentEnrollmentForm />
       </Tile>
     </Box>
-  );
-}
-
-function Syllabus({ courseId }) {
-  if (!(courseId && courseId in syllabus)) return null;
-  return (
-    <List hoverable>
-      {syllabus[courseId].map((courseSyllabus, index) => (
-        <List.Item key={index} active={index === 1 ? true : false}>
-          {courseSyllabus.title}
-        </List.Item>
-      ))}
-    </List>
   );
 }
 
